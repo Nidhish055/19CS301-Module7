@@ -1,46 +1,84 @@
 # 19CS301-Module7
 EX: 7.1 RECURSION
-### Aim: To Write a Python Program to find the sum of all digits in a number using recursion
+
+### Aim:
+Write a Python program to convert decimal number to binary number using recursion.
+
 ### Algorithm:
-STEP 1: Start.
 
-STEP 2: Define a function.
+Step 1: Start the program.
 
-STEP 3: Create a base case for termination of the function. STEP 4: Create a recursive case to calculate the result.
+Step 2: Define a recursive function `decimal_to_binary(n)` to convert a decimal number to binary.
 
-STEP 5: Print the result. STEP 6: Stop.
+Step 3: Inside the function, check if n is equal to 0.
+         - If yes, return an empty string "" (base case).
+         
+ Step 4: If n is not 0, call the same function recursively with n // 2,
+         and concatenate the result with str(n % 2) to build the binary string.
+         
+ Step 5: Read an integer input from the user and store it in variable n.
+ 
+ Step 6: Call the function `decimal_to_binary(n)` and store the result in `res`.
+ 
+ Step 7: Print the result.
+ 
+ Step 8: End the program.
+
+
 
 ### Program:
-```
-def sum_digit(n):
-       if n<=0:
-            return 0
-       else:
-            return n%10+sum_digit(n//10)
+```python
+# Name: Nidhish B
+# Reg no.: 212223050032
+def decimal_to_binary(n):
+    if n == 0:
+        return "" 
+    else:
+        return decimal_to_binary(n // 2) + str(n % 2) 
+        
 n = int(input())
-sum = sum_digit(n)
-print(sum)
+res=decimal_to_binary(n)
+print(res)
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/50acc657-266e-46e6-ab17-10358494e26c)
 
-### Result: Thus, the given program is implemented and executed successfully .
+![image](https://github.com/user-attachments/assets/9f3ec539-73cd-446c-a70b-a0e111917b41)
+
+
+### Result:
+Thus, the given program is implemented and executed successfully.
  
 
 EX: 7.2 TYPES OF RECURSIONS
-### Aim: To Write a Python Program to find the sum of all digits in a number using recursion
+### Aim:
+To Write a Python program to print odd numbers till ‘N’ using head recursion.
+
 ### Algorithm:
-STEP 1: Start.
 
-STEP 2: Define a function.
+ Step 1: Start the program.
+ 
+Step 2: Define a recursive function `fun(n)`.
 
-STEP 3: Create a recursive case in the first line of function for head recursion.
+ Step 3: Inside the function, check if n > 0.
+          - If yes, call the function again with n - 2.
 
-STEP 4: Print the result.
+ Step 4: After the recursive call, print (n - 1) followed by a space.
+
+ Step 5: Read an integer input from the user and store it in variable x.
+
+ Step 6: If x is even, call `fun(x)`.
+         - If x is odd, call `fun(x + 1)` to make it even.
+
+ Step 7: End the program.
+
 
 STEP 5: Stop.
 ### Program:
-```
+```python
+
+#Name: Nidhish B
+#Reg.no: 212223050032
+
 def fun(n):
      if (n >0):
           fun(n - 2)
@@ -53,29 +91,46 @@ else:
 
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/c4d6416f-d333-49c1-9dd5-0f774cdabb03)
 
-###Result: Thus, the given program is implemented and executed successfully.
+![image](https://github.com/user-attachments/assets/27a0b068-633e-4d8b-8b92-bdb6c33275d2)
+
+### Result:
+
+Thus, the given program is implemented and executed successfully.
  
 
 
 EX: 7.3 TAYLOR SERIES
 
-###Aim: To python program to evaluate the series using recursion by collecting the x and n values from the user.
+### Aim:
+
+Write a python program to evaluate the series using recursion: 
+1+x+x^2+x^3+.....+x^n by collecting the x and n values from the user.
+
+
 ### ALGORITHM:
-STEP 1: Start.
 
-STEP 2: Create a variable x and n.
+ Step 1: Start the program.
 
-STEP 3: Get the values of x and n from user.
+Step 2: Define a recursive function `series(x, n)` to calculate the series x^n/n + x^(n-1)/(n-1) + ... + x^1/1 + 1.
 
-STEP 4: Create a base case and recursive case to calculate the result.
+Step 3: Inside the function, check if n is equal to 0.
+           - If yes, return 1 (base case).
 
-STEP 5: Print the result.
+ Step 4: Otherwise, return (x raised to the power n divided by n) plus the recursive call `series(x, n - 1)`.
 
-STEP 6: Stop.
+ Step 5: Read integer inputs for `x` and `n` from the user.
+
+ Step 6: Call the function `series(x, n)` and print the result.
+
+ Step 7: End the program.
+
 ### Program:
-```
+```python
+
+# Name: Nidhish B
+# Reg.no: 212223050032
+
 def series(x,n):
          if n==0:
             return 1
@@ -85,51 +140,56 @@ x = int(input())
 n = int(input())
 print(series(x,n))
 ```
-### Output:
-![image](https://github.com/user-attachments/assets/1d00b1a4-cecb-466f-8593-805f00d27461)
 
- 
-### Result: Thus, the given program is implemented and executed successfully .
+### Output:
+![image](https://github.com/user-attachments/assets/4e2b7c7f-74ab-442c-9aaf-a324c755a37d)
+
+### Result: 
+Thus, the given program is implemented and executed successfully .
+
  
 
 EX: 7.4 Solve by recursion relation
 
-### Aim: To Write a Python Program to find whether a string is a palindrome or not using recursion
+### Aim: 
+To Write a Python program to find the product of all elements in the list.
 
 ### Algorithm:
-STEP 1: Start.
 
-STEP 2: Define a function.
+1. Start the program.
+2. Define a function `prod_list(l, len)` to multiply list elements recursively.
+3. If length is 0, return the first element.
+4. Else, return l[len] * prod_list(l, len - 1).
+5. Create an empty list `l`.
+6. Read number of elements `n` from the user.
+7. Use a loop to input `n` numbers into the list.
+8. Call the function and print the result.
+9. End.
 
-STEP 3: Create a base case and recursive case to calculate the result.
-
-STEP 4: Create a variable and get input from user.
-
-STEP 5 : Call the function.
-
-STEP 6: Print the result.
-
-STEP 7: Stop.
 
 ### Program:
-```
-def is_palindrome(word):
-      if len(word)<1:
-            return True
-      else:
-            if word[0]==word[-1]:
-                 return is_palindrome(word[1:-1])
-             else:
-                  return False
-word = str(input())
-if is_palindrome(word)==True:
-        print("String is a palindrome")
-else:
-        print("String is not a palindrome")
+```python
+
+# Name: Nidhish B
+# Reg.no: 212223050032
+
+def prod_list(l,len):
+    if len==0:
+        return l[0]
+    else:
+        return l[len]*prod_list(l,len-1)
+
+l=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    l.append(x)
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/d30ef836-1901-448a-a146-dc905fdc3198)
 
-### Result: Thus, the given program is implemented and executed successfully .
+![image](https://github.com/user-attachments/assets/5ef9e4d7-190c-4001-aaca-7e5bf3d0a3a2)
+
+### Result:
+Thus,the given program is implemented and executed successfully.
  
 
