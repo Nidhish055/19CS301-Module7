@@ -191,5 +191,46 @@ for i in range(n):
 
 ### Result:
 Thus,the given program is implemented and executed successfully.
+
+EX: 7.4 Solve by tail recursion
+
+### Aim: 
+To Write a Python Program to convert a decimal number to a binary number using tail recursion.
+
+### Algorithm:
+
+1. Start
+2. Input the decimal number n
+3. Define a function con(n) as follows:
+    a. If n == 0, return 0
+    b. Else, return (n % 2) + 10 * con(n // 2)
+4. Call the function con(n) and store the result in res
+5. Print the value of res
+6. End
+
+### Program:
+```python
+
+# Name: Nidhish B
+# Reg.no: 212223050032
+
+def con(n):
+    if n==0:
+        return 0
+    else:
+        return (n%2)+10*con(int(n/2))
+
+n=int(input())
+res=con(n)
+print(res)
+
+```
+### Output:
+
+![image](https://github.com/user-attachments/assets/ce6f55e8-a797-44cb-a2fa-5146536c86cb)
+
+
+### Result:
+Thus,the given program is implemented and executed successfully.
  
 
